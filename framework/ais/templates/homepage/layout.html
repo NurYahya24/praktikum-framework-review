@@ -6,6 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{% block title %}{% endblock %} - AIS</title>
     {% load django_bootstrap5 %} {% bootstrap_css %}
+    <!-- Penggunaan Static -->
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    <link rel="icon" href="{% static 'images/logo.png' %}" type="image/jpeg" />
+    <!-- Penggunaan Static -->
 </head>
 
 <body>
@@ -28,10 +33,7 @@
             </div>
         </div>
     </nav>
-    <div class="container mt-4">
-        {% block content %}
-        {% endblock %}
-    </div>
+    <div class="container mt-4">{% block content %} {% endblock %}</div>
     {% bootstrap_javascript %}
 </body>
 
